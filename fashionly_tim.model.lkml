@@ -16,6 +16,8 @@ explore: company_list {}
 
 explore: distribution_centers {}
 
+explore: derived_native_table {}
+
 explore: events {
   join: users {
     type: left_outer
