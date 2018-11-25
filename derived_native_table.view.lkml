@@ -19,7 +19,7 @@
       type: number
     }
 
-    measure: order_revenue_rank {
+    dimension: order_revenue_rank {
       type: number
 
       }
