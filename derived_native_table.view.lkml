@@ -5,7 +5,7 @@
         column: count {}
         column: total_sale_price {}
         derived_column: order_revenue_rank {
-          sql: rank() over(order by total_revenue desc) ;;
+          sql: rank() over(order by total_sale_price desc) ;;
         }
       }
     }
@@ -17,6 +17,7 @@
     }
     dimension: total_sale_price {
       type: number
+      value_format: "$#,##0.00"
     }
 
     dimension: order_revenue_rank {
