@@ -110,6 +110,32 @@ view: order_items {
     sql: ${sale_price} ;;
   }
 
+  measure: lifetime_orders {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: lifetime_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: first_order {
+    type: min
+    sql: ${created_date} ;;
+  }
+
+  measure: latest_order {
+    type: max
+    sql: ${created_date} ;;
+  }
+
+  measure: number_of_distinct_months_with_order {
+    type: number
+    sql: DATEDIFF(mm, NOW(), ${created_date}) ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
