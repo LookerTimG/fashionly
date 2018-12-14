@@ -133,7 +133,7 @@ view: order_items {
 
   measure: number_of_distinct_months_with_order {
     type: number
-    sql: PERIOD_DIFF(NOW(), ${created_date}) ;;
+    sql: DATEDIFF(MONTH, ${latest_order}, CURRENT_DATE) ;;
   }
 
   # ----- Sets of fields for drilling ------
